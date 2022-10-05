@@ -11,10 +11,10 @@ while i<=N:
         i+=1
 print('множители данного числа:', multi)
 
-multi = [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]
+# multi = [1, 4, 2, 3, 3, 4, 2, 5, 7, 8, 8, 7, 9]
 si = len(multi)
 x = 0
-y = 1
+y = 0
 total = 1
 temp = multi[0]
 mega = []
@@ -29,5 +29,5 @@ while x<si:
         mega.append(temp)
     total=1
     x+=1
-    y=1
-print('3. Неповторяющиеся элементы среди элементов:', mega, "\n ")
+    y=0
+print('3. Неповторяющиеся элементы:', mega, "\n ")
