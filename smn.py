@@ -32,7 +32,6 @@ while x<si:
     y=0
 print('3. Неповторяющиеся элементы:', mega)
 
-# import math
 import random
 k = int(input('4. Введите значение степени: '))
 x = []
@@ -48,11 +47,15 @@ data.write(str(k))
 data.write(' => ')
 data.write('2*x^')
 data.write(str(k))
-data.write('+4*x+5=0 \n')
+data.write('+4*x+5=0 ')
 data.writelines('with x=')
 data.write(str(ix))
 data.write(' => ')
 data.write(str(form))
+data.close()
+data = open('DZ4.txt', 'r')
+for li in data:
+    print(li, '\n')
 data.close()
 
 
