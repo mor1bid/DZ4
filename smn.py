@@ -32,31 +32,32 @@
 #     y=0
 # print('3. Неповторяющиеся элементы:', mega)
 
-# import random
-# k = int(input('4. Введите значение степени: '))
-# x = []
-# si = round(random.uniform(0,101))
-# for i in range(int(si)):
-#     xnum = round(random.uniform(0,101))
-#     x.append(xnum)
-# ix = x[si-1]
-# form = round(2*pow(ix, k)+4*ix+5)
-# data = open('DZ4.txt', 'a')
-# data.write('k=')
-# data.write(str(k))
-# data.write(' => ')
-# data.write('2*x^')
-# data.write(str(k))
-# data.write('+4*x+5=0 ')
-# data.writelines('with x=')
-# data.write(str(ix))
-# data.write(' => ')
-# data.write(str(form))
-# data.close()
-# data = open('DZ4.txt', 'r')
-# for li in data:
-#     print(li, '\n')
-# data.close()
+import random
+k = int(input('4. Введите значение степени: '))
+x = []
+si = round(random.uniform(0,101))
+for i in range(int(si)):
+    xnum = round(random.uniform(0,101))
+    x.append(xnum)
+ix = x[si-1]
+form = round(2*pow(ix, k)+4*ix+5)
+data = open('DZ4.txt', 'a')
+data.write('k=')
+data.write(str(k))
+data.write(' => ')
+data.write('2*x^')
+data.write(str(k))
+data.write('+4*x+5=0 ')
+data.writelines('with x=')
+data.write(str(ix))
+data.write(' => ')
+data.write(str(form))
+data.write(' \r\n')
+data.close()
+data = open('DZ4.txt', 'r')
+for li in data:
+    print(li, '\r\n')
+data.close()
 
 data1 = open('DZ51.txt', 'r')
 data2 = open('DZ52.txt', 'r')
