@@ -58,25 +58,26 @@
 #     print(li, '\n')
 # data.close()
 
-data1 = open('DZ51.txt', 'r')
-data2 = open('DZ52.txt', 'r')
-res = open('DZ5.txt', 'w')
+# data1 = open('DZ51.txt', 'r')
+# data2 = open('DZ52.txt', 'r')
+# res = open('DZ5.txt', 'w')
 with open('DZ51.txt', 'r') as data1:
-    text1 = data1.read(8)
-    res.write(text1)
-res.write('+ ')
+    print(*data1)
+    with open('DZ5.txt', 'w') as res:
+        for li in data1:
+            text1 = data1.read(li)
+            res.write(text1)
 with open('DZ52.txt', 'r') as data2:
-    text2 = data2.read()
-    res.write(text2)
-# res.write(text1)
-# res.write('+ ')
-# res.write(text2)
+    with open('DZ5.txt', 'w') as res:
+        for li in data2:
+            text2 = data2.read(li)
+            res.write(text2)
 data1.close()
 data2.close()
 res.close()
 res = open('DZ5.txt', 'r')
 for li in res:
-    # if li != '=' or li != '0':
-    print(li)
-# print('\n = 0')
+    if li != '=' or li != '0':
+        print(li)
+res('\n = 0')
 res.close()
