@@ -1,58 +1,64 @@
-d = int(input('1. Введите точность вычисления числа π: '))
-pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) for x in range(d))
-print(round(pi, d))
+# d = int(input('1. Введите точность вычисления числа π: '))
+# pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) for x in range(d))
+# print(round(pi, d))
 
-N = int(input("2. Введите число: "))
-multi = []
-i = 2
-while i <= N:
-    if N % i == 0:
-        N /= i
-        multi.append(i)
-        i = 2
-    else:
-        i += 1
-print('множители данного числа:', multi)
+# N = int(input("2. Введите число: "))
+# multi = []
+# i = 2
+# while i <= N:
+#     if N % i == 0:
+#         N /= i
+#         multi.append(i)
+#         i = 2
+#     else:
+#         i += 1
+# print('множители данного числа:', multi)
 
-# multi = [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]
-si = len(multi)
-x = 0
-y = 0
-total = 1
-temp = multi[0]
-mega = []
-while x < si:
-    while y < si:
-        if multi[x] != multi[y]:
-            temp = multi[x]
-        else:
-            total += 1
-        y += 1
-    if total == 2:
-        mega.append(temp)
-    total = 1
-    x += 1
-    y = 0
-print('3. Неповторяющиеся элементы:', mega)
+# # multi = [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]
+# si = len(multi)
+# x = 0
+# y = 0
+# total = 1
+# temp = multi[0]
+# mega = []
+# while x < si:
+#     while y < si:
+#         if multi[x] != multi[y]:
+#             temp = multi[x]
+#         else:
+#             total += 1
+#         y += 1
+#     if total == 2:
+#         mega.append(temp)
+#     total = 1
+#     x += 1
+#     y = 0
+# print('3. Неповторяющиеся элементы:', mega)
 
 import random
 k = int(input('4. Введите значение степени: '))
-x = []
-si = round(random.uniform(0,101))
-for i in range(int(si)):
+ix = []
+for i in range(1, k*10):
     xnum = round(random.uniform(0,101))
-    x.append(xnum)
-ix = x[si - 1]
-form = round(2*pow(ix, k) + 4 * ix + 5)
+    ix.append(xnum)
+x = ix[random.randint(0, 1)]
+anum = ix[random.randint(0, 1)]
+bnum = ix[random.randint(0, 1)]
+cnum = ix[random.randint(0, 1)]
+form = anum*pow(x, k) + bnum * x + cnum
 data = open('DZ4.txt', 'a')
 data.write('k=')
 data.write(str(k))
 data.write(' => ')
-data.write('2*x^')
+data.write(str(anum))
+data.write('x^')
 data.write(str(k))
-data.write('+4*x+5=0 ')
-data.writelines('with x=')
-data.write(str(ix))
+data.write(' + ')
+data.write(str(bnum))
+data.write('x + ')
+data.write(str(cnum))
+data.writelines(' = 0  with x=')
+data.write(str(x))
 data.write(' => ')
 data.write(str(form))
 data.write(' \r\n')
@@ -88,10 +94,12 @@ with open('DZ5.txt', 'w') as res:
             res.write(str(listf[i]))
             res.write('x^2')
         elif listf[i] >= 0 or i == 1 and listf[i] >= 0: 
-            res.write(' +', str(listf[i]))
+            res.write('+', str(listf[i]))
             res.write('x')
         elif i == 1:
             res.write(str(listf[i]))
             res.write('x')
         else:
             res.write(str(listf[i]))
+    res.write('=0')
+res.close()
