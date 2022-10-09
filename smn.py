@@ -1,39 +1,39 @@
-# d = int(input('1. Введите точность вычисления числа π: '))
-# pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) for x in range(d))
-# print(round(pi, d))
+d = int(input('1. Введите точность вычисления числа π: '))
+pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) for x in range(d))
+print(round(pi, d))
 
-# N = int(input("2. Введите число: "))
-# multi = []
-# i = 2
-# while i <= N:
-#     if N % i == 0:
-#         N /= i
-#         multi.append(i)
-#         i = 2
-#     else:
-#         i += 1
-# print('множители данного числа:', multi)
+N = int(input("2. Введите число: "))
+multi = []
+i = 2
+while i <= N:
+    if N % i == 0:
+        N /= i
+        multi.append(i)
+        i = 2
+    else:
+        i += 1
+print('множители данного числа:', multi)
 
-# # multi = [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]
-# si = len(multi)
-# x = 0
-# y = 0
-# total = 1
-# temp = multi[0]
-# mega = []
-# while x < si:
-#     while y < si:
-#         if multi[x] != multi[y]:
-#             temp = multi[x]
-#         else:
-#             total += 1
-#         y += 1
-#     if total == 2:
-#         mega.append(temp)
-#     total = 1
-#     x += 1
-#     y = 0
-# print('3. Неповторяющиеся элементы:', mega)
+# multi = [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]
+si = len(multi)
+x = 0
+y = 0
+total = 1
+temp = multi[0]
+mega = []
+while x < si:
+    while y < si:
+        if multi[x] != multi[y]:
+            temp = multi[x]
+        else:
+            total += 1
+        y += 1
+    if total == 2:
+        mega.append(temp)
+    total = 1
+    x += 1
+    y = 0
+print('3. Неповторяющиеся элементы:', mega)
 
 import random
 k = int(input('4. Введите значение степени: '))
